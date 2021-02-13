@@ -1,4 +1,4 @@
-# NPM Scripts for Bootstrap Theme Development
+# NPM for Theme Development using Bootstrap
 
 ## Getting Started
 
