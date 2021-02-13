@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build:clear": "del-cli ./public",
-    "build:js": "mkdirp ./public && mkdirp ./public/js && concat -o public/js/app.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js app.js",
+    "build:js": "mkdirp ./public && mkdirp ./public/js && concat -o public/js/app.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js app.js && cpx node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map ./public/js ",
     "build:scss": "node-sass ./scss -o ./public/css",
     "build:html": "cpx html/**/*.html public",
     "dist:clear": "del-cli ./dist",
