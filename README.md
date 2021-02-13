@@ -1,1 +1,1 @@
-# NPM Scripts for Bootstrap Development
+# NPM Scripts for Bootstrap Theme Development
