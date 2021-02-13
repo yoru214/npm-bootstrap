@@ -9,7 +9,7 @@
     "build:html": "cpx html/**/*.html public",
     "dist:js": "mkdirp ./dist && mkdirp ./dist/js && uglifyjs -o dist/js/app.js public/js/app.js",
     "dist:scss": "mkdirp ./dist && mkdirp ./dist/css && node-sass ./scss -o ./dist/css  --output-style compressed",
-    "dist:html": "cpx public/*.html dist",
+    "dist:html": "cpx public/**/*.html dist",
     "build": "npm run build:js && npm run build:scss && npm run build:html",
     "dist": "npm run build && npm run dist:js && npm run dist:scss && npm run dist:html",
     "test": "npm run build && http-server ./public"
