@@ -4,14 +4,16 @@
   "description": "NPM Scripts for Bootstrap Development",
   "main": "app.js",
   "scripts": {
-    "build:js": "mkdirp ./public/js && concat -o public/js/app.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js app.js",
+    "build:clear": "del-cli ./public",
+    "build:js": "mkdirp ./public && mkdirp ./public/js && concat -o public/js/app.js node_modules/bootstrap/dist/js/bootstrap.bundle.min.js app.js",
     "build:scss": "node-sass ./scss -o ./public/css",
     "build:html": "cpx html/**/*.html public",
+    "dist:clear": "del-cli ./dist",
     "dist:js": "mkdirp ./dist && mkdirp ./dist/js && uglifyjs -o dist/js/app.js public/js/app.js",
     "dist:scss": "mkdirp ./dist && mkdirp ./dist/css && node-sass ./scss -o ./dist/css  --output-style compressed",
     "dist:html": "cpx public/**/*.html dist",
-    "build": "npm run build:js && npm run build:scss && npm run build:html",
-    "dist": "npm run build && npm run dist:js && npm run dist:scss && npm run dist:html",
+    "build": "npm run build:clear && npm run build:js && npm run build:scss && npm run build:html",
+    "dist": "npm run dist:clear && npm run build && npm run dist:js && npm run dist:scss && npm run dist:html",
     "test": "npm run build && http-server ./public"
   },
   "author": "Emmanuel Zerna",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "concat": "^1.0.3",
     "cpx": "^1.2.1",
+    "del-cli": "^3.0.1",
     "http-server": "^0.12.3",
     "mkdirp": "^0.5.5",
     "node-sass": "^5.0.0",
