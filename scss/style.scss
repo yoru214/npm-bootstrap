@@ -1,0 +1,9 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+/**
+This is where your style will be 
+**/
+$base-color: aqua;
+
+body {
+    color:$base-color;
+}
